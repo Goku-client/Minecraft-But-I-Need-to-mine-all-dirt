@@ -59,7 +59,7 @@ public final class DirtTools {
 		CustomData cd = stack.get(DataComponents.CUSTOM_DATA);
 		if (cd == null) return null;
 		for (String k : KEYS) {
-			if (cd.contains(k)) return k;
+			if (cd.copyTag().contains(k)) return k;
 		}
 		return null;
 	}
