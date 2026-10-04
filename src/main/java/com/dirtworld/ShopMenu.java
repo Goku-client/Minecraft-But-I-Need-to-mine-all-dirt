@@ -88,7 +88,7 @@ public class ShopMenu extends ChestMenu {
 		Shop.Product p = Shop.PRODUCTS.get(productIndex);
 		long balance = Bank.get(owner);
 		if (balance < p.cost()) {
-			owner.playNotifySound(SoundEvents.VILLAGER_NO, SoundSource.NEUTRAL, 1.0F, 1.0F);
+			owner.level().playSound(null, owner.getX(), owner.getY(), owner.getZ(), SoundEvents.VILLAGER_NO, SoundSource.NEUTRAL, 1.0F, 1.0F);
 			owner.sendSystemMessage(Component.literal("Not enough Dirt Tokens! Need " + fmt(p.cost())
 					+ ", you have " + fmt(balance) + ".").withStyle(ChatFormatting.RED));
 			return;
@@ -96,7 +96,7 @@ public class ShopMenu extends ChestMenu {
 		Bank.set(owner, balance - p.cost());
 		ItemStack bought = p.maker().apply((ServerLevel) owner.level());
 		owner.getInventory().placeItemBackInInventory(bought);
-		owner.playNotifySound(SoundEvents.VILLAGER_YES, SoundSource.NEUTRAL, 1.0F, 1.0F);
+		owner.level().playSound(null, owner.getX(), owner.getY(), owner.getZ(), SoundEvents.VILLAGER_YES, SoundSource.NEUTRAL, 1.0F, 1.0F);
 		owner.sendSystemMessage(Component.literal("Bought ").withStyle(ChatFormatting.GREEN)
 				.append(bought.getHoverName()).append(Component.literal("!")));
 		refresh();
