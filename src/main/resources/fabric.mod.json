@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "dirtworld",
+  "version": "${version}",
+  "name": "Minecraft But I Need To Mine All Dirt From The World",
+  "description": "Mine dirt and grass for Dirt Tokens, then spend them in a secret shop on dirt-erasing superweapons. Can you remove every last block of dirt?",
+  "authors": ["Goku"],
+  "license": "MIT",
+  "icon": "assets/dirtworld/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["com.dirtworld.DirtWorldMod"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
